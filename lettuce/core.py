@@ -959,6 +959,8 @@ class Feature(object):
             scenario.feature = self
             if scenario.tags and self.tags:
                 scenario.tags.extend(self.tags)
+            elif self.tags:
+                scenario.tags = self.tags
 
     def _find_tags_in(self, original_string):
         broad_regex = re.compile(ur"([@].*)%s: (%s)" % (
